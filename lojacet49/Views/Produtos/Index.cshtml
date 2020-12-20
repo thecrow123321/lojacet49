@@ -1,0 +1,89 @@
+﻿@model IEnumerable<lojacet49.Dados.Entidades.Produto>
+    <!--nome do modelo q é produto q esta na pasta entidades em dados na pasta lojacet49-->
+    <!--NAO MEXER AQUI A IDEIA É ENTENDER" se quiser apagar algo tenho que saber o que se faz por isso comentei-->
+    <!--nao posso mexer só apagar-->
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                    <!-- vai ao modelo nome e mostra o nome-->
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Preco)
+                    <!-- vai ao modelo preço e mostra o preço-->
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrlDaImagem)
+                    <!-- vai ao modelo nome e mostra o url da imagem-->
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UltimaCompra)
+                    <!-- vai ao modelo UltimaCompra e mostra a UltimaCompra-->
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UltimaVenda)
+                    <!-- vai ao modelo Ultima Venda e mostra a UltimaVenda-->
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Disponivel)
+                    <!-- vai ao modelo Disponivel e mostra a ultima venda-->
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stock)
+                    <!-- vai ao modelo nome e mostra a ultima venda-->
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                        <!--mostra o item nome-->
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Preco)
+                        <!--mostra o item Preço-->
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrlDaImagem)
+                        <!--mostra o item UrlDaImagem-->
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UltimaCompra)
+                        <!--mostra o item UltimaCompra-->
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UltimaVenda)
+                        <!--mostra o item UltimaVenda-->
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Disponivel)
+                        <!--mostra o item se esta Disponivel ou nao-->
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stock)
+                        <!--mostra o item se esta em Stock ou nao-->
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
